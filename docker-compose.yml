@@ -10,14 +10,15 @@ services:
     volumes:
       - './satisfactory-server:/config'
     environment:
-      - MAXPLAYERS=4
+      - MAXPLAYERS=6
       - PGID=1000
       - PUID=1000
-      - STEAMBETA=false
+      - STEAMBETA=true
     restart: unless-stopped
+    network_mode: host
     deploy:
       resources:
         limits:
-          memory: 8G
+          memory: 12G
         reservations:
           memory: 4G
